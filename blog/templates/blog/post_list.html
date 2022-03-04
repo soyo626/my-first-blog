@@ -10,16 +10,13 @@
     <div>
         <h1><a href="/">Soyo's Blog</a></h1>
     </div>
-    <div>
-        <p>published: 03.03.2022, 17:39</p>
-        <h2><a href = "">My first post</a></h2>
-        <p>こんにちは！　よろしくお願い致します！</p>
-    </div>
-
-    <div>
-        <p>公開日: 2022/03/03, 17:43</p>
-        <h2><a href="">Second Post</a></h2>
-        <p>こんばんは:)</p>
-    </div>
+   
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.create_date}}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>  
+    {% endfor %}
 </body>
 </html>
